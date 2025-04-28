@@ -9,13 +9,6 @@ This project implements a document intelligence API using **FastAPI** and integr
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Environment Setup](#environment-setup)
-- [API Endpoints](#api-endpoints)
-- [Running the Application](#running-the-application)
-- [Database Migrations](#database-migrations)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
