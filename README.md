@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Aindriya-Bot
-This Chatbot is used to , if you paste a website url, upload any documents, it will answer based upon that, so that, also by sing the chats, it will display the chat insights based upon the user.
-=======
 # Chatbot API with Document Intelligence and LLM Integration
 
 This project implements a document intelligence API using **FastAPI** and integrates **Google Gemini Flash** LLM (Large Language Model) for answering questions based on indexed documents. Users can upload various documents, text, or URLs, which are processed and stored. The API allows users to ask questions, and it uses the indexed data and conversation history to generate meaningful responses.
@@ -57,4 +53,3 @@ The core functionalities include:
 - **Package Management**: `pip` or `poetry`
 
 ---
->>>>>>> develop
