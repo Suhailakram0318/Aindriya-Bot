@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+
+# Environment variables
+*.env
+
+# VSCode settings
+.vscode/
+
+# Python/mypy/misc caches
+.mypy_cache/
+.pytest_cache/
+*.sqlite3
+
+# Local databases
+*.db
+*.sqlite
+
+# MacOS specific
+.DS_Store
+
+# FAISS index files (if any)
+*.index
+*.faiss
+
+# Uploads or temporary files
+uploads/
+temp/
+*.tmp
+
+# Logs
+*.log
+
+# Coverage reports
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# Node.js folders (if you ever add frontend)
+node_modules/
+
+# Dist / Build folders
+build/
+dist/
+*.egg-info/
+
+# IDEs
+.idea/
+
+# System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Test outputs
+test-results/
