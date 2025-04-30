@@ -1,9 +1,11 @@
 # models.py
 from pydantic import BaseModel
-from sqlalchemy import Column, Integer, String, ForeignKey, Text
+from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from database import Base
+from datetime import datetime
+from typing import Optional
 
 Base = declarative_base()
 
@@ -11,6 +13,7 @@ class QuestionPayload(BaseModel):
     user_id: int
     username: str
     question: str
+    session_id: Optional[int] = None
 
 # User table
 class User(Base):
@@ -24,6 +27,7 @@ class User(Base):
     # Relationships
     chats = relationship('ChatHistory', back_populates='user')
     documents = relationship('Document', back_populates='user')
+    sessions = relationship("Session", back_populates="user")
 
     def __repr__(self):
         return f"<User {self.username}>"
@@ -36,8 +40,10 @@ class ChatHistory(Base):
     username = Column(String(50))
     message = Column(Text)
     timestamp = Column(String(255))
+    session_id = Column(Integer, ForeignKey("sessions.id"), nullable=True)
 
     user = relationship('User', back_populates='chats')
+    session = relationship("Session", back_populates="chat_history")
 
     def __repr__(self):
         return f"<ChatHistory {self.id} - {self.username}>"
@@ -56,4 +62,19 @@ class Document(Base):
 
     def __repr__(self):
         return f"<Document {self.id} - {self.username}>"
+    
+class Session(Base):
+    __tablename__ = "sessions"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    user = relationship("User", back_populates="sessions")
+    chat_history = relationship("ChatHistory", back_populates="session")
+
+class AskRequest(BaseModel):
+    user_id: int
+    question: str
+    session_id: Optional[int] = None
     
