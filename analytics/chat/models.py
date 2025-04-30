@@ -1,6 +1,6 @@
 # models.py
 from pydantic import BaseModel
-from sqlalchemy import Column, Integer, String, ForeignKey, Text, Float, Text, DateTime 
+from sqlalchemy import Column, Integer, String, ForeignKey, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from database import Base
