@@ -1,7 +1,6 @@
 from datetime import datetime
 from analytics.models import UsageStat, PerformanceMetric, ErrorLog
 from sqlalchemy.orm import Session
-import time
 
 def log_usage(db: Session, user_id, username, endpoint, request_type):
     usage = UsageStat(
