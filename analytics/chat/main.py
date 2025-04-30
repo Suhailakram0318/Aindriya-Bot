@@ -9,7 +9,7 @@ from web_scraper import process_url_content
 from faiss_index import create_index, load_index_and_chunks
 from gemini_flash import get_llm_response
 from sqlalchemy.orm import Session
-from database import get_db  # get_db is used to get the database session
+from database import get_db
 from chat_history import store_document  # Services to store chat history & documents
 from models import ChatHistory
 from datetime import datetime
