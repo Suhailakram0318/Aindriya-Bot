@@ -12,7 +12,7 @@ class UsageStat(Base):
     user_id = Column(Integer)
     username = Column(String(50))
     endpoint = Column(String(100))
-    request_type = Column(String(20))  # upload, ask, etc.
+    request_type = Column(String(20))  
     timestamp = Column(DateTime, default=datetime.utcnow)
 
 
