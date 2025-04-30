@@ -19,7 +19,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50), unique=True, index=True)
     email = Column(String(255), unique=True, index=True)
-    password = Column(String(255))
+    hashed_password = Column(String(255))
 
     # Relationships
     chats = relationship('ChatHistory', back_populates='user')
